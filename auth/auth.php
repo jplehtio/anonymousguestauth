@@ -101,8 +101,8 @@
 	}
 
 	function createNewUser(){
-		$userId = openssl_random_pseudo_bytes(32, $cstrong);
-		$ownerId = openssl_random_pseudo_bytes(32, $cstrong);
+		$userId = base64_encode(openssl_random_pseudo_bytes(24, $cstrong));
+		$ownerId = base64_encode(openssl_random_pseudo_bytes(24, $cstrong));
 
 		$dbconf = parse_ini_file("db.conf");
 		
